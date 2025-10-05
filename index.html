@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selvamani Govindaraj - AI Developer</title>
+    <title>Selvamani Govindaraj - AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -3rem; /* Adjusted for centering */
+            left: -2.5rem; /* Adjusted for mobile */
             top: 0.5rem;
             width: 1.25rem;
             height: 1.25rem;
@@ -92,6 +92,12 @@
             border: 3px solid var(--accent-glow);
             border-radius: 9999px;
             z-index: 1;
+        }
+
+        @media (min-width: 640px) { /* sm breakpoint */
+             .timeline-item::before {
+                left: -3rem;
+            }
         }
         
         .btn-primary {
@@ -102,6 +108,19 @@
 
         .btn-primary:hover {
             background-position: right center;
+        }
+
+        .project-card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .project-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-glow);
+            font-weight: bold;
         }
 
     </style>
@@ -119,6 +138,7 @@
                     <a href="#about" class="text-gray-300 hover:text-cyan-300 transition duration-300">About</a>
                     <a href="#skills" class="text-gray-300 hover:text-cyan-300 transition duration-300">Skills</a>
                     <a href="#experience" class="text-gray-300 hover:text-cyan-300 transition duration-300">Experience</a>
+                    <a href="#projects" class="text-gray-300 hover:text-cyan-300 transition duration-300">Projects</a>
                     <a href="#contact" class="text-gray-300 hover:text-cyan-300 transition duration-300">Contact</a>
                 </nav>
                  <!-- Mobile Menu Button -->
@@ -133,6 +153,7 @@
                 <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">About</a>
                 <a href="#skills" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Skills</a>
                 <a href="#experience" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Experience</a>
+                <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Projects</a>
                 <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Contact</a>
             </div>
         </div>
@@ -145,7 +166,7 @@
             <div id="particles-js"></div>
             <div class="z-10">
                 <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-white mb-4">Selvamani Govindaraj</h1>
-                <h2 class="text-2xl md:text-4xl font-medium text-gradient mb-8">AI Developer</h2>
+                <h2 class="text-2xl md:text-4xl font-medium text-gradient mb-8">AI Engineer</h2>
                 <p class="text-lg text-text-secondary max-w-3xl mx-auto mb-8 font-mono">
                     Crafting intelligent systems & scalable backends with a focus on Generative AI and RAG architecture.
                 </p>
@@ -167,8 +188,8 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-28">
-            <h2 class="text-3xl font-bold text-white text-center mb-16 section-heading">About Me</h2>
+        <section id="about" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12 md:mb-16 section-heading">About Me</h2>
             <div class="max-w-4xl mx-auto text-lg text-text-secondary leading-relaxed">
                  <p>
                     I am a Technical Lead and AI Engineer specializing in the architecture of high-impact AI solutions. My core expertise lies in Retrieval-Augmented Generation (RAG) systems, AI Agents, and scalable backend infrastructure. I thrive on bridging the gap between complex AI capabilities and robust, high-performance software engineering.
@@ -180,8 +201,8 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-28">
-            <h2 class="text-3xl font-bold text-white text-center mb-16 section-heading">Core Competencies</h2>
+        <section id="skills" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12 md:mb-16 section-heading">Core Competencies</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="card p-6 rounded-lg">
                     <h3 class="text-xl font-semibold text-gradient mb-4">AI & Machine Learning</h3>
@@ -222,10 +243,10 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-28">
-            <h2 class="text-3xl font-bold text-white text-center mb-20 section-heading">Career Trajectory</h2>
+        <section id="experience" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12 md:mb-20 section-heading">Career Trajectory</h2>
             <div class="max-w-3xl mx-auto">
-                <div class="relative border-l-2 border-gray-800 pl-12">
+                <div class="relative border-l-2 border-gray-800 pl-10 sm:pl-12">
                     <!-- JKTech -->
                     <div class="mb-12 relative timeline-item">
                         <h3 class="text-xl font-bold text-cyan-300">Technical Lead</h3>
@@ -262,6 +283,58 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12 md:mb-20 section-heading">Key Projects</h2>
+            <div class="max-w-4xl mx-auto space-y-16">
+                
+                <!-- Project 1 -->
+                <div class="card project-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gradient mb-3">Private Asset Management Platform (Generative AI)</h3>
+                    <p class="text-text-secondary mb-6">A sophisticated platform designed to streamline and automate data extraction, validation, and interaction with financial documents for private asset management.</p>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li><strong>AI-Powered Data Extraction:</strong> Reduced manual data entry by over 40% by developing an intelligent module to extract data from financial documents using AWS Textract and LLMs.</li>
+                        <li><strong>Regulatory Compliance Agent:</strong> Engineered an AI agent with LangGraph and LangChain to validate financial regulations against internal policies, using a memory-first architecture.</li>
+                        <li><strong>Conversational AI Chat:</strong> Created a secure, interactive AI Chat for clients to query their documents, with robust guardrails for accuracy.</li>
+                        <li><strong>Automated Evaluation Pipeline:</strong> Accelerated the development lifecycle by 50% by building a pipeline that eliminated manual re-testing after prompt modifications.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card project-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gradient mb-3">E-commerce Microservices Ecosystem</h3>
+                    <p class="text-text-secondary mb-6">A suite of scalable, independent microservices designed to handle the entire e-commerce lifecycle, from order placement to financial reporting.</p>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li><strong>Asynchronous Order Services:</strong> Designed asynchronous workflows using Node.js and RabbitMQ for high-volume order processing and recurring billing.</li>
+                        <li><strong>Finance & Reporting Service:</strong> Developed the core finance service for customer accounts and financial reports, using Elasticsearch and Kibana for monitoring.</li>
+                        <li><strong>Incident Management Integration:</strong> Integrated PagerDuty across all microservices, reducing system downtime and improving response times by 30%.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card project-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gradient mb-3">AI-Powered Risk Scoring System (Insurtech)</h3>
+                    <p class="text-text-secondary mb-6">An innovative system for the fleet insurance sector to automate risk assessment and dynamically calculate premiums based on real-time data.</p>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li><strong>Serverless Architecture:</strong> Spearheaded development with AWS Lambda, leading to a 20% reduction in operational costs and a 100% increase in data processing throughput.</li>
+                        <li><strong>Machine Learning Integration:</strong> Integrated custom AI/ML models to analyze fleet data, identify risk patterns, and generate accurate risk scores.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                 <div class="card project-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gradient mb-3">Decentralized Reinsurance Platform (Blockchain)</h3>
+                    <p class="text-text-secondary mb-6">A blockchain-based platform for the reinsurance industry, designed to enhance transparency, security, and efficiency in contractual agreements.</p>
+                    <ul class="space-y-3 text-text-secondary">
+                        <li><strong>Smart Contract Development:</strong> Engineered and deployed secure Solidity smart contracts to automate and enforce reinsurance agreements.</li>
+                        <li><strong>Test-Driven Development (TDD):</strong> Applied TDD methodologies, resulting in a 25% reduction in development time and increased contract reliability.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- Contact & Footer -->
@@ -379,5 +452,4 @@
 
 </body>
 </html>
-
 
